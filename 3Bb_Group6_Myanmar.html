@@ -1642,6 +1642,169 @@
           flex-direction: column;
         }
       }
+
+      /* =====================================================
+MOBILE FIX: Types of Phrases and School Terms
+Turns cramped mobile tables into readable cards
+===================================================== */
+      @media (max-width: 700px) {
+        #phrases .tab-bar {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 8px;
+          border-bottom: 0;
+          padding-bottom: 0;
+        }
+
+        #phrases .tab-btn {
+          width: 100%;
+          min-height: 46px;
+          border-radius: 12px;
+          padding: 8px 10px;
+          text-align: center;
+          line-height: 1.2;
+          white-space: normal;
+        }
+
+        #school .word-grid {
+          grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+          gap: 10px;
+        }
+
+        #school .word-card {
+          min-width: 0;
+          padding: 13px 9px;
+        }
+
+        #school .wc-mm,
+        #school .wc-rom,
+        #school .wc-en {
+          overflow-wrap: anywhere;
+          word-break: normal;
+        }
+      }
+
+      @media (max-width: 620px) {
+        #phrases .data-table,
+        #school .data-table {
+          display: block;
+          width: 100%;
+          overflow: visible;
+          white-space: normal;
+          border-spacing: 0;
+        }
+
+        #phrases .data-table thead,
+        #school .data-table thead {
+          display: none;
+        }
+
+        #phrases .data-table tbody,
+        #phrases .data-table tr,
+        #phrases .data-table td,
+        #school .data-table tbody,
+        #school .data-table tr,
+        #school .data-table td {
+          display: block;
+          width: 100%;
+        }
+
+        #phrases .data-table tbody tr,
+        #school .data-table tbody tr {
+          background: #fbf5ec;
+          border: 1.5px solid rgba(23, 32, 51, 0.14);
+          border-radius: 12px;
+          margin-bottom: 12px;
+          padding: 10px 12px;
+          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+        }
+
+        #phrases .data-table tbody tr td,
+        #school .data-table tbody tr td {
+          background: transparent;
+          border-radius: 0;
+          padding: 7px 0;
+          font-size: 0.88rem;
+          white-space: normal;
+          overflow-wrap: anywhere;
+        }
+
+        #phrases .data-table tbody tr td + td,
+        #school .data-table tbody tr td + td {
+          border-top: 1px solid rgba(23, 32, 51, 0.1);
+        }
+
+        #phrases .data-table td::before,
+        #school .data-table td::before {
+          display: block;
+          margin-bottom: 3px;
+          font-size: 0.68rem;
+          font-weight: 900;
+          letter-spacing: 0.04em;
+          text-transform: uppercase;
+          color: var(--text-muted);
+        }
+
+        #phrases .data-table td:nth-child(1)::before {
+          content: "No.";
+        }
+
+        #phrases .data-table td:nth-child(2)::before {
+          content: "Burmese Phrase";
+        }
+
+        #phrases .data-table td:nth-child(3)::before {
+          content: "Romanization";
+        }
+
+        #phrases .data-table td:nth-child(4)::before {
+          content: "English Translation";
+        }
+
+        #school .data-table td:nth-child(1)::before {
+          content: "English";
+        }
+
+        #school .data-table td:nth-child(2)::before {
+          content: "Burmese";
+        }
+
+        #school .data-table td:nth-child(3)::before {
+          content: "Pronunciation";
+        }
+
+        #phrases .mm,
+        #school .mm {
+          font-size: 1.08rem;
+          line-height: 1.5;
+        }
+
+        body[data-theme="dark"] #phrases .data-table tbody tr,
+        body[data-theme="dark"] #school .data-table tbody tr {
+          background: #222b3a;
+          border-color: rgba(255, 255, 255, 0.14);
+        }
+
+        body[data-theme="dark"] #phrases .data-table tbody tr td + td,
+        body[data-theme="dark"] #school .data-table tbody tr td + td {
+          border-top-color: rgba(255, 255, 255, 0.1);
+        }
+      }
+
+      @media (max-width: 420px) {
+        #phrases .tab-bar {
+          grid-template-columns: 1fr;
+        }
+
+        #school .word-grid {
+          grid-template-columns: 1fr;
+        }
+
+        #phrases .section-body,
+        #school .section-body {
+          padding: 12px;
+        }
+      }
     </style>
   </head>
   <body data-theme="light">
